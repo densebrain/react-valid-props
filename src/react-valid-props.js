@@ -158,7 +158,7 @@ export const HTMLPropNames = [
 	'wmode'
 ]
 
-const toLower = (str) => !str ? null : propName.toLowerCase()
+const toLower = (str) => !str ? null : str.toLowerCase()
 
 
 const mergedProps = SVGPropNames.concat(HTMLPropNames).map(propName => toLower(propName))
