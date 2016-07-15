@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Source Files" pattern="file[react-valid-props]:src//*" />
+</component>
