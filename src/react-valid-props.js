@@ -1,5 +1,14 @@
 
 
+export const EventPropNames = ("onCopy onCut onPaste onCompositionEnd onCompositionStart onCompositionUpdate " +
+		"onKeyDown onKeyPress onKeyUp onFocus onBlur onChange onInput onSubmit onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit " +
+		"onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave " +
+		"onMouseMove onMouseOut onMouseOver onMouseUp onSelect onTouchCancel onTouchEnd onTouchMove onTouchStart onScroll onWheel " +
+		"onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted " +
+		"onEnded onError onLoadedData onLoadedMetadata onLoadStart onPause onPlay " +
+		"onPlaying onProgress onRateChange onSeeked onSeeking onStalled onSuspend " +
+		"onTimeUpdate onVolumeChange onWaiting onLoad onError onAnimationStart onAnimationEnd onAnimationIteration onTransitionEnd").split(' ')
+
 // https://facebook.github.io/react/docs/tags-and-attributes.html#svg-attributes
 export const SVGPropNames = [
 	'clipPath',
@@ -161,12 +170,19 @@ export const HTMLPropNames = [
 const toLower = (str) => !str ? null : str.toLowerCase()
 
 
-const mergedProps = SVGPropNames.concat(HTMLPropNames).map(propName => toLower(propName))
+const mergedProps = SVGPropNames.concat(EventPropNames,HTMLPropNames).map(propName => toLower(propName))
 
+// Ensure unique
 export const AllReactProps = mergedProps
 	.filter((propName,index) => mergedProps.indexOf(propName) === index)
 
 
+/**
+ * Filter properties ensuring valid
+ *
+ * @param props
+ * @returns {*}
+ */
 export function filterProps(props) {
 	return Object.keys(props)
 		.filter(propName => propName && AllReactProps.indexOf(toLower(propName)) > -1)
