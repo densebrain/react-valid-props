@@ -1,6 +1,6 @@
 {
   "name": "react-valid-props",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A little helper to get around unknown property in react 15.2",
   "main": "dist/react-valid-props.js",
   "files": [
