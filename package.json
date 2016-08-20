@@ -3,8 +3,14 @@
   "version": "1.0.2",
   "description": "A little helper to get around unknown property in react 15.2",
   "main": "dist/react-valid-props.js",
+  "files": [
+    "src",
+    "dist",
+    ".babelrc",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish-patch": "npm version patch && git push --tags"
   },
   "keywords": [
     "react",
@@ -13,7 +19,7 @@
   ],
   "author": "Jonathan Glanz",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^15.2.1"
   },
   "devDependencies": {
