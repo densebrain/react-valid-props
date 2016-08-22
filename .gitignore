@@ -1,4 +1,5 @@
-node_modules
 .idea/workspace.xml
-
 .idea/watcherTasks.xml
+node_modules
+npm-debug.log
+
