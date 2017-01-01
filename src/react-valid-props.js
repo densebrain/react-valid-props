@@ -185,7 +185,7 @@ export const AllReactProps = mergedProps
  */
 export function filterProps(props) {
 	return Object.keys(props)
-		.filter(propName => propName && AllReactProps.indexOf(toLower(propName)) > -1)
+		.filter(propName => propName && (AllReactProps.indexOf(toLower(propName)) > -1 || toLower(propName).indexOf('data') === 0))
 		.reduce((filteredProps,propName) => {
 			filteredProps[propName] = props[propName]
 			return filteredProps
