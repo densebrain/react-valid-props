@@ -176,7 +176,6 @@ const mergedProps = SVGPropNames.concat(EventPropNames,HTMLPropNames).map(propNa
 export const AllReactProps = mergedProps
 	.filter((propName,index) => mergedProps.indexOf(propName) === index)
 
-
 /**
  * Filter properties ensuring valid
  *
@@ -185,7 +184,7 @@ export const AllReactProps = mergedProps
  */
 export function filterProps(props) {
 	return Object.keys(props)
-		.filter(propName => propName && (AllReactProps.indexOf(toLower(propName)) > -1 || toLower(propName).indexOf('data') === 0))
+		.filter(propName => propName && (AllReactProps.indexOf(toLower(propName)) > -1 || toLower(propName).indexOf('data') > -1))
 		.reduce((filteredProps,propName) => {
 			filteredProps[propName] = props[propName]
 			return filteredProps
